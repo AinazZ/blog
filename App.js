@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import 'react-native-gesture-handler';
 import IndexScreen from './src/screens/IndexScreen';
 import ShowScreen from './src/screens/ShowScreen';
+import CreateScreen from './src/screens/CreateScreen';
 import { Provider } from './src/context/BlogContext';
 
 const Stack = createStackNavigator();
@@ -20,6 +21,9 @@ const App = () => {
           <Stack.Screen
             name="Show"
             component={ShowScreen} />
+          <Stack.Screen
+            name="Create"
+            component={CreateScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
