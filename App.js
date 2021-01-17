@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import 'react-native-gesture-handler';
 import IndexScreen from './src/screens/IndexScreen';
+import ShowScreen from './src/screens/ShowScreen';
 import { Provider } from './src/context/BlogContext';
 
 const Stack = createStackNavigator();
@@ -16,6 +17,9 @@ const App = () => {
             name="Index"
             component={IndexScreen}
             options={{ title: 'Blogs' }} />
+          <Stack.Screen
+            name="Show"
+            component={ShowScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
