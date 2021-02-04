@@ -1,4 +1,4 @@
-import React, { useContext, useLayoutEffect } from 'react';
+import React, { useContext, useLayoutEffect, useEffect } from 'react';
 import {
     View, Text, StyleSheet, FlatList, TouchableOpacity
 } from 'react-native';
@@ -6,7 +6,11 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Context } from '../context/BlogContext';
 
 const IndexScreen = ({ navigation }) => {
-    const { state, deleteBlogPost } = useContext(Context);
+    const { state, deleteBlogPost, getBlogPosts } = useContext(Context);
+
+    useEffect(() => {
+        getBlogPosts();
+    }, []);
 
     useLayoutEffect(() => {
         navigation.setOptions({
