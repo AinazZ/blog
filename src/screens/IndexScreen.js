@@ -15,9 +15,7 @@ const IndexScreen = ({ navigation }) => {
             getBlogPosts();
         });
 
-        return () => {
-            listener.remove();
-        };
+        return listener;
     }, []);
 
     useLayoutEffect(() => {
